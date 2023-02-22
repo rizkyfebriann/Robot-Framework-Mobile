@@ -1,0 +1,9 @@
+{
+    "appium:automationName": "UiAutomator2",
+    "platformName": "Android",
+    "appium:deviceName": "emulator-5554",
+    "appium:app": "com.loginmodule.learning",
+    "appium:appActivity": "com.loginmodule.learning.activities.LoginActivity",
+    "appium:autoGrantPermissions": true,
+    "appium:noReset": true
+  }

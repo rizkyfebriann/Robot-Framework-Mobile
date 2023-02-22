@@ -1,0 +1,8 @@
+txt_email : com.loginmodule.learning:id/textInputEditTextEmail
+txt_password : com.loginmodule.learning:id/textInputEditTextPassword 
+btn_login : com.loginmodule.learning:id/appCompatButtonLogin
+user_box : com.loginmodule.learning:id/recyclerViewUsers
+snackbar_wrong_email_password : com.loginmodule.learning:id/snackbar_text
+dashboard_name : com.loginmodule.learning:id/textViewName
+dashboard_email : com.loginmodule.learning:id/textViewEmail
+dashboard_password : com.loginmodule.learning:id/textViewPassword
