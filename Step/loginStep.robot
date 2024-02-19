@@ -8,22 +8,22 @@ Test Teardown           Close Session
 
 ***Test Cases***
 Login with valid account
-    Input username        tester@tester.co
-    Input password        wisnu123
+    Input username        test1@mail.com
+    Inputing password     123456
     Click login button
     Sleep                 1
     Success login
 
 Login with invalid email account
     Input username                wisnu
-    Input password                wisnu123
+    Inputing password             wisnu123
     Click login button    
     Sleep                         1
     Failed login invalid email
 
 Login with invalid user account
     Input username                wisnu@invalid.co
-    Input password                invalid
+    Inputing password             invalid
     Click login button    
     Sleep                         1
     Failed login wrong email or password

@@ -1,12 +1,13 @@
 ***Settings***
 Library                 AppiumLibrary
 Library                 OperatingSystem
+Library    Telnet
 Variables               ../Resources/loginElement.yaml
 
 *** Variables ***
 ${REMOTE_URL}                           http://localhost:4723/wd/hub
 ${APPS}                                 ${EXECDIR}/APK/LoginAPK.apk
-${DEVICE}                               emulator-5554
+${UDID}                                 emulator-5554
 ${PLATFORM}                             Android
 ${AUTOMATION_NAME}                      UiAutomator2
 
@@ -16,7 +17,7 @@ Start Session
     Open Application    ${REMOTE_URL}
     ...                 automationName=${AUTOMATION_NAME} 
     ...                 platformName=${PLATFORM}   
-    ...                 deviceName=${DEVICE}
+    ...                 deviceName=${UDID}
     ...                 app=${APPS}
     ...                 autoGrantPermissions=true
     ...                 noReset=false
@@ -26,7 +27,7 @@ Input username
     [Arguments]       ${email}
     Input Text        ${txt_email}     ${email}
 
-Input password
+Inputing password
     [Arguments]       ${password}
     Input Text        ${txt_password}     ${password}
 
@@ -34,9 +35,13 @@ Click login button
     Click Element     ${btn_login}
 
 Success login
-    Page should contain element     ${dashboard_name}
-    Page should contain element     ${dashboard_email}
-    Page should contain element     ${dashboard_password}
+     Wait Until Element Is Visible    ${dashboard_name}        5 seconds
+     Wait Until Element Is Visible    ${dashboard_email}       5 seconds
+     Wait Until Element Is Visible    ${dashboard_password}    5 seconds
+
+#    Page should contain element     ${dashboard_name}
+#    Page should contain element     ${dashboard_email}
+#    Page should contain element     ${dashboard_password}
 
 Failed login invalid email
     Page should contain text          Enter Valid Email
